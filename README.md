@@ -2,6 +2,7 @@
 dotfiles für
 
 - neovim
+- tmux
 
 
 # Install
