@@ -6,11 +6,11 @@ dotfiles für
 
 
 # Install
-Benutzt stow. 
+benutzt stow
 
-Der /dotfiles Ordner muss im Homeverzeichnis liegen.
+der /dotfiles ordner muss im homeverzeichnis liegen
 
-stow macht dann die Entsprechenden links.
+stow macht dann die entsprechenden links
 
 `sudo apt install stow`
 
