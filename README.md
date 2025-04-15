@@ -12,14 +12,16 @@ der /dotfiles ordner muss im homeverzeichnis liegen
 
 stow macht dann die entsprechenden links
 
-`sudo apt install stow git`
+``` bash
+sudo apt install stow git
+```
 
-`
+``` bash
 cd $HOME
 git clone git@github.com:schnuebel/dotfiles.git 
 cd dotfiles
 stow .
-`
+```
 
 
 ### Ref
