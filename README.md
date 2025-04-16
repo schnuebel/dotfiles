@@ -3,6 +3,7 @@ dotfiles für
 
 - neovim
 - tmux
+- zsh
 
 
 # Install
