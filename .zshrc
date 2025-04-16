@@ -29,3 +29,7 @@ zinit light romkatv/powerlevel10k
 #######################################
 #neovim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+#######################################
+#tmux
+alias thelp='cat $HOME/.tmux.conf | grep bind'
