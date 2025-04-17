@@ -34,3 +34,7 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 #tmux
 alias thelp='cat $HOME/.tmux.conf | grep bind'
 alias tw='$HOME/create-tmux-workspace.sh'
+
+#######################################
+#golang
+export PATH=$PATH:/usr/local/go/bin
