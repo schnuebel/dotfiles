@@ -51,6 +51,8 @@ if tmux has-session -t $SESSION_NAME &>/dev/null; then
     exit
 fi
 
+cd $WS_PATH
+
 if ! tmux new-session -d -s $SESSION_NAME -c $WS_PATH; then
     exit
 fi
@@ -61,11 +63,14 @@ tmux set -t $SESSION_NAME status-bg $BG_COLOR
 tmux set -t $SESSION_NAME status-fg $FG_COLOR
 
 tmux rename-window -t $SESSION_NAME:1 "nvim"
-tmux send-keys -t $SESSION_NAME:1 "nvim ." C-m
+tmux send-keys -t $SESSION_NAME:1 "nvim $WS_PATH" C-m
 
 tmux new-window -t $SESSION_NAME:2 -n 'zsh'
 
+tmux select-window -t $SESSION_NAME:1
+
 if $detached; then
+    cd $PWD
     exit
 fi
 
