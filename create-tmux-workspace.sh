@@ -40,10 +40,6 @@ else
     SESSION_NAME=$DIR_NAME
 fi
 
-if [ ! -z "${path}" ] && [ -d $path ]; then
-    echo valid dir $path
-fi
-
 if tmux has-session -t $SESSION_NAME &>/dev/null; then
     if ! $detached; then
         tmux attach -t $SESSION_NAME
