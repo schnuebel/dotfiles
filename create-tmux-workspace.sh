@@ -1,6 +1,5 @@
 #!/bin/bash
 
-path=""
 name=""
 detached=false
 
@@ -10,9 +9,6 @@ while getopts :n:p:d opt; do
     n)
         name=$OPTARG
         ;;
-    p)
-        path=$OPTARG
-        ;;
     d)
         detached=true
         ;;
@@ -21,9 +17,7 @@ done
 shift $(expr $OPTIND - 1)
 
 WS_PATH=$1
-if [ ! -z "$path" ] && [ -d $path]; then
-    WS_PATH=$path
-elif [ -z "${WS_PATH}" ]; then
+if [ -z "${WS_PATH}" ]; then
     WS_PATH=$PWD
 fi
 
@@ -39,19 +33,23 @@ esac
 
 DIR_NAME=''
 FILE_NAME=''
-is_file=false
-is_dir=false
 if [ -d $WS_ABS_PATH ]; then
-    is_dir=true
     DIR_NAME=${WS_ABS_PATH##*/}
-elif [ -f $WS_PATH ]; then
-    is_file=true
+elif [ -f $WS_ABS_PATH ]; then
     DIR_NAME=$(basename "$(dirname $WS_ABS_PATH)")
     FILE_NAME=${WS_ABS_PATH##*/}
 fi
 
-if ! $is_file && ! $is_dir; then
-    echo 'file/dir does not exist:' $WS_PATH 1>&2
+WS_ABS_DIR_PATH=$WS_ABS_PATH
+if [ ! -z "${FILE_NAME}" ]; then
+    WS_ABS_DIR_PATH=$(dirname $WS_ABS_PATH)
+fi
+
+echo WS_ABS_PATH $WS_ABS_PATH
+echo WS_ABS_DIR_PATH $WS_ABS_DIR_PATH
+
+if [ -z "${FILE_NAME}" ] && [ -z "${DIR_NAME}" ]; then
+    echo 'file/dir does not exist:' $WS_ABS_PATH 1>&2
     exit 1
 fi
 
@@ -68,10 +66,6 @@ if tmux has-session -t $SESSION_NAME &>/dev/null; then
     exit
 fi
 
-WS_ABS_DIR_PATH=$WS_ABS_PATH
-if $is_file; then
-    WS_ABS_DIR_PATH=$(dirname $WS_ABS_PATH)
-fi
 cd $WS_ABS_DIR_PATH
 
 if ! tmux new-session -d -s $SESSION_NAME -c $WS_ABS_DIR_PATH; then
@@ -88,6 +82,7 @@ tmux rename-window -t $SESSION_NAME:1 "nvim"
 tmux send-keys -t $SESSION_NAME:1 "nvim $WS_ABS_PATH" C-m
 
 tmux new-window -t $SESSION_NAME:2 -n 'zsh'
+tmux send-keys -t $SESSION_NAME:2 "cd $WS_ABS_DIR_PATH" C-m
 
 tmux select-window -t $SESSION_NAME:1
 
