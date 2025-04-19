@@ -40,3 +40,7 @@ alias tw='$HOME/dotfiles/create-tmux-workspace.sh'
 #######################################
 #golang
 export PATH=$PATH:/usr/local/go/bin
+
+#######################################
+#snap
+export PATH=$PATH:/snap/bin
