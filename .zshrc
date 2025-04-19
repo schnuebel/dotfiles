@@ -33,6 +33,8 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 #######################################
 #tmux
 alias thelp='cat $HOME/.tmux.conf | grep bind'
+alias taa='tmux a'
+alias tll='tmux list-sessions'
 alias tw='$HOME/dotfiles/create-tmux-workspace.sh'
 
 #######################################
