@@ -45,9 +45,6 @@ if [ ! -z "${FILE_NAME}" ]; then
     WS_ABS_DIR_PATH=$(dirname $WS_ABS_PATH)
 fi
 
-echo WS_ABS_PATH $WS_ABS_PATH
-echo WS_ABS_DIR_PATH $WS_ABS_DIR_PATH
-
 if [ -z "${FILE_NAME}" ] && [ -z "${DIR_NAME}" ]; then
     echo 'file/dir does not exist:' $WS_ABS_PATH 1>&2
     exit 1
