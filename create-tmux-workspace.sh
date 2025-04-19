@@ -82,7 +82,6 @@ tmux rename-window -t $SESSION_NAME:1 "nvim"
 tmux send-keys -t $SESSION_NAME:1 "nvim $WS_ABS_PATH" C-m
 
 tmux new-window -t $SESSION_NAME:2 -n 'zsh'
-tmux send-keys -t $SESSION_NAME:2 "cd $WS_ABS_DIR_PATH" C-m
 
 tmux select-window -t $SESSION_NAME:1
 
