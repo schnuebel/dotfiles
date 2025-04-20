@@ -6,6 +6,31 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ########################################
+#zsh
+#history
+
+autoload -U compinit && compinit
+
+setopt SHARE_HISTORY
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space #commands mit nem space am anfang werden nicht in history gespeichert
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# das hier ist geht wahrscheinlich nur in wsl
+bindkey "${terminfo[kcuu1]}" history-search-backward
+bindkey "${terminfo[kcud1]}" history-search-forward
+# fuer andere setups funktioniert das hier bestimmt
+# bindkey '^[[A' history-search-backward
+# bindkey '^[[B' history-search-forward
+
+########################################
 ### zinit packet manager
 #init zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -22,6 +47,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
+
+# autosuggestion
+zinit light zsh-users/zsh-autosuggestions
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
