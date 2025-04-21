@@ -86,3 +86,7 @@ alias gp="git push"
 #######################################
 #misc
 alias ll="ls --color -la"
+
+#######################################
+#pip install path
+export PATH=$PATH:$HOME/.local/bin
