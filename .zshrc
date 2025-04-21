@@ -32,6 +32,10 @@ bindkey "${terminfo[kcud1]}" history-search-forward
 # bindkey '^[[A' history-search-backward
 # bindkey '^[[B' history-search-forward
 
+# alt + pfeiltasten fuer word jump
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
 ########################################
 ### zinit packet manager
 #init zinit
