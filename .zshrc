@@ -18,7 +18,9 @@ SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory
 setopt sharehistory
-setopt hist_ignore_space #commands mit nem space am anfang werden nicht in history gespeichert
+#commands mit nem space am anfang werden nicht in history gespeichert
+#nicht wundern bis zum naechsten command ist das dann noch in der hist
+setopt hist_ignore_space 
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
