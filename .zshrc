@@ -75,7 +75,6 @@ export PATH=$PATH:/usr/local/go/bin
 #snap
 export PATH=$PATH:/snap/bin
 
-
 #######################################
 #git
 alias ga="git add"
@@ -83,3 +82,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gcm="git commit -m"
 alias gp="git push"
+
+#######################################
+#misc
+alias ll="ls --color -la"
