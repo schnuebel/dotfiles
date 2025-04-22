@@ -3,8 +3,6 @@
 name=""
 detached=false
 
-# mpv --no-config --no-audio --vo=tct --loop=inf --term-status-msg= cow.mp4
-
 #https://flokoe.github.io/bash-hackers-wiki/howto/getopts_tutorial
 while getopts :n:p:d opt; do
     case $opt in
