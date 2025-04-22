@@ -90,7 +90,7 @@ alias gp="git push"
 #######################################
 #misc
 alias ll="ls --color -la"
-# mpv --no-config --no-audio --vo=tct --loop=inf --term-status-msg= cow.mp4
+alias cow="mpv --no-config --no-audio --vo=tct --loop=inf --term-status-msg= $HOME/cow.mp4"
 
 #######################################
 #pip install path
