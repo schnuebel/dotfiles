@@ -87,6 +87,6 @@ if $detached; then
     exit
 fi
 
-sleep 0.6
+sleep 0.8
 
 tmux attach-session -t $SESSION_NAME:1

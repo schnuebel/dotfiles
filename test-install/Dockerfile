@@ -1,3 +1,7 @@
+# muss im parent dir gebaut werden weil da das install.sh script liegt
+# sudo docker build -t test -f test-install/Dockerfile .
+
+
 FROM ubuntu:24.04
 
 WORKDIR /root
