@@ -24,3 +24,5 @@ _darcs
 
 create-tmux-workspace.sh
 /color-picker
+install.sh
+/test-install
