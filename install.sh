@@ -22,8 +22,6 @@ sudo apt-get -y install \
     wget \
     curl
 
-# nvim
-
 #######################################
 #golang
 wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
