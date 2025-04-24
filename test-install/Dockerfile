@@ -12,7 +12,8 @@ RUN apt-get update && \
 
 WORKDIR /root
 
+COPY . /root/dotfiles
 
-CMD git clone https://github.com/schnuebel/dotfiles.git && cd dotfiles && chmod +x install.sh && ./install.sh
+CMD cd dotfiles && chmod +x install.sh && ./install.sh
 
 

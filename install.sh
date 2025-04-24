@@ -71,6 +71,7 @@ stow .
 
 chsh -s /bin/zsh
 
-while true; do
-    sleep 1
-done
+# for docker test
+#while true; do
+#    sleep 1
+#done
