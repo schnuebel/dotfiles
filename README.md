@@ -24,6 +24,18 @@ cd dotfiles
 stow .
 ```
 
+## install.sh
+funktioniert nur fuer ubuntu, vielleicht
+```bash
+sudo apt-get update
+sudo apt-get install git
+cd $HOME
+git clone https://github.com/schnuebel/dotfiles.git
+cd dotfiles
+chmod +x install.sh
+./install.sh
+```
+
 
 ### Ref
 https://www.youtube.com/watch?v=y6XCebnB9gs
