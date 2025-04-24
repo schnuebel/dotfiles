@@ -1,3 +1,5 @@
+-- :SessionDelete
+
 return {
   'rmagatti/auto-session',
   lazy = false,
