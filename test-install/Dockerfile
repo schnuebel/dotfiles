@@ -10,14 +10,9 @@ RUN apt-get update && \
     apt-get install -y git bash && \
     apt-get clean
 
-RUN git clone https://github.com/schnuebel/dotfiles.git
+WORKDIR /root
 
-WORKDIR /root/dotfiles
 
-COPY install.sh /root/dotfiles/install.sh
-
-RUN chmod +x install.sh
-
-CMD ["./install.sh"]
+CMD git clone https://github.com/schnuebel/dotfiles.git && cd dotfiles && chmod +x install.sh && ./install.sh
 
 
