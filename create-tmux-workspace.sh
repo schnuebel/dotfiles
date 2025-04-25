@@ -70,6 +70,10 @@ if ! tmux new-session -d -s $SESSION_NAME -c $WS_ABS_DIR_PATH; then
     exit
 fi
 
+if [ -n "$SSH_CLIENT" ]; then
+    tmux set -t $SESSION_NAME status-position bottom
+fi
+
 BG_COLOR=$($HOME/dotfiles/color-picker/color-picker $SESSION_NAME | sed -n '1 p')
 FG_COLOR=$($HOME/dotfiles/color-picker/color-picker $SESSION_NAME | sed -n '2 p')
 tmux set -t $SESSION_NAME status-bg $BG_COLOR
