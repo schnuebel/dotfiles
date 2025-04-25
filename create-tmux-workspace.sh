@@ -31,6 +31,10 @@ case $WS_PATH in
     ;;
 esac
 
+# fuer den fall dass .. oder . das angegeben dir ist
+cd $WS_ABS_PATH
+WS_ABS_PATH=$PWD
+
 DIR_NAME=''
 FILE_NAME=''
 if [ -d $WS_ABS_PATH ]; then
