@@ -81,10 +81,20 @@ vim.keymap.set('n', '<leader>tt', ':vsplit term://zsh<CR>', opts)
 -- Sessions
 vim.keymap.set('n', '<leader>SS', function()
   local cwd = vim.fn.getcwd(-1, -1)
-  vim.cmd 'echo cwd'
-  --local safe_cwd = vim.fn.substitute(cwd, '/', '%', 'g')
-  --local session_path = '~/.local/state/nvim/sessions/' .. safe_cwd .. '.vim'
-  --vim.cmd('mksession! ' .. session_path)
+  local safe_cwd = vim.fn.substitute(cwd, '/', '\\\\%', 'g') .. '.vim'
+  safe_cwd = vim.fn.substitute(safe_cwd, '%', '', '')
+  local session_path = '~/.local/state/nvim/sessions/' .. safe_cwd
+  local command = 'mksession! ' .. session_path
+  vim.cmd(command)
+end)
+
+vim.keymap.set('n', '<leader>LS', function()
+  local cwd = vim.fn.getcwd(-1, -1)
+  local safe_cwd = vim.fn.substitute(cwd, '/', '\\\\%', 'g') .. '.vim'
+  safe_cwd = vim.fn.substitute(safe_cwd, '%', '', '')
+  local session_path = '~/.local/state/nvim/sessions/' .. safe_cwd
+  local command = 'source ' .. session_path
+  vim.cmd(command)
 end)
 
 -- Explorer
