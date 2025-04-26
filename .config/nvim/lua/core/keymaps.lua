@@ -77,3 +77,15 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- terminal
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
 vim.keymap.set('n', '<leader>tt', ':vsplit term://zsh<CR>', opts)
+
+-- Sessions
+vim.keymap.set('n', '<leader>SS', function()
+  local cwd = vim.fn.getcwd(-1, -1)
+  vim.cmd 'echo cwd'
+  --local safe_cwd = vim.fn.substitute(cwd, '/', '%', 'g')
+  --local session_path = '~/.local/state/nvim/sessions/' .. safe_cwd .. '.vim'
+  --vim.cmd('mksession! ' .. session_path)
+end)
+
+-- Explorer
+vim.keymap.set('n', '<leader>e', '<cmd>Explore<CR>', opts)

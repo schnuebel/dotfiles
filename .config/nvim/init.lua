@@ -12,7 +12,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
-  require 'plugins/neotree',
+  --require 'plugins/neotree',
   require 'plugins/colortheme',
   require 'plugins/bufferline',
   require 'plugins/lualine',
@@ -25,5 +25,8 @@ require('lazy').setup {
   require 'plugins/alpha',
   require 'plugins/indent-blankline',
   require 'plugins/misc',
-  require 'plugins/auto-session',
+  require 'plugins/easypick',
+  --require 'plugins/telescope-file-browser',
+  --require 'plugins/persistence',
+  --require 'plugins/auto-session',
 }

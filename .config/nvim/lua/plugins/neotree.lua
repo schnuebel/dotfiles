@@ -5,25 +5,25 @@ return {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
     'MunifTanjim/nui.nvim',
-    {
-      's1n7ax/nvim-window-picker',
-      version = '2.*',
-      config = function()
-        require('window-picker').setup {
-          filter_rules = {
-            include_current_win = false,
-            autoselect_one = true,
-            -- filter using buffer options
-            bo = {
-              -- if the file type is one of following, the window will be ignored
-              filetype = { 'neo-tree', 'neo-tree-popup', 'notify' },
-              -- if the buffer type is one of following, the window will be ignored
-              buftype = { 'terminal', 'quickfix' },
-            },
-          },
-        }
-      end,
-    },
+    --{
+    --  's1n7ax/nvim-window-picker',
+    --  version = '2.*',
+    --  config = function()
+    --    require('window-picker').setup {
+    --      filter_rules = {
+    --        include_current_win = false,
+    --        autoselect_one = true,
+    --        -- filter using buffer options
+    --        bo = {
+    --          -- if the file type is one of following, the window will be ignored
+    --          filetype = { 'neo-tree', 'neo-tree-popup', 'notify' },
+    --          -- if the buffer type is one of following, the window will be ignored
+    --          buftype = { 'terminal', 'quickfix' },
+    --        },
+    --      },
+    --    }
+    --  end,
+    --},
   },
   config = function()
     -- If you want icons for diagnostic errors, you'll need to define them somewhere:
@@ -237,8 +237,8 @@ return {
             ['/'] = 'fuzzy_finder',
             ['D'] = 'fuzzy_finder_directory',
             ['#'] = 'fuzzy_sorter', -- fuzzy sorting using the fzy algorithm
-            -- ["D"] = "fuzzy_sorter_directory",
-            ['f'] = 'filter_on_submit',
+            --["D"] = "fuzzy_sorter_directory",
+            ['F'] = 'filter_on_submit',
             ['<c-x>'] = 'clear_filter',
             ['[g'] = 'prev_git_modified',
             [']g'] = 'next_git_modified',
