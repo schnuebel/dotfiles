@@ -50,3 +50,7 @@ return {
     vim.cmd 'colorscheme kanagawa'
   end,
 }
+
+-- return {
+--   'andreasvc/vim-256noir',
+-- }
