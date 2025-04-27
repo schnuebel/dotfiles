@@ -1,3 +1,26 @@
+#echo "                                          .l"
+# echo "                     ,:                  ,:d"
+# echo "                    ;:l   .,,,';;''..',,lok."
+# echo "                   '0;l;;;. .. .  ..xcdO0d'."
+# echo "                  .;KOkOdc'...   ,. dll,'..,;;"
+# echo "                .,:, ';c.'.   .:';l  ;;.lKKO:."
+# echo "          .;d0WWMX;okl', ,,     ..cc  .d..:c."
+# echo "          .';o0XNWMOxOo.  ,,0Ko,     ':0;."
+# echo "             ;lxkWkcxo,' .l;   ''     .l"
+# echo "               ..o    ..               :O."
+# echo "              ' ' .,, l;     .   :::'    :l,"
+# echo "              l    :c:xl   . c;     ;;..'ck00"
+# echo "  kuh->     ...  ; .llxK...;;..;.    : :koMMM;"
+# echo "             c  ;: :d0dWKo;' .  .. '.,KXKWMMX,"
+# echo "             o;.o ;cNMWWMW0O0KkkdddlkKOxddc"
+# echo "             d';kcdkMMMWWNWNXWWWKOl,."
+# echo "             o.d,xkWMWKNNNWMKc."
+# echo "              oc:l0M0KWWWW0'"
+# echo "               ;ccKXKNKWMx"
+# echo "                 ..:o0KWX"
+# echo "                   .;oKMo"
+# echo "                      .d."
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
