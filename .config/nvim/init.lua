@@ -25,6 +25,7 @@ require('lazy').setup {
   require 'plugins/alpha',
   require 'plugins/indent-blankline',
   require 'plugins/misc',
+  require 'plugins/hop',
   --require 'plugins/easypick',
   --require 'plugins/telescope-file-browser',
   --require 'plugins/persistence',
